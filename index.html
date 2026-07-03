@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PROJECT J 🤍</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+
+    <section class="screen active lock-screen" id="lockScreen">
+      <p class="top-secret">CONFIDENTIAL</p>
+      <h1>PROJECT J</h1>
+      <p class="status">STATUS : LOCKED 🔒</p>
+
+      <div class="password-box">
+        <label>Enter Password</label>
+        <input id="passwordInput" type="password" placeholder="what's the password 🤔" />
+        <p class="hint">Hint: ดอกไม้ที่หันตาม ☀️</p>
+        <button onclick="checkPassword()">Unlock</button>
+        <p class="error" id="errorText"></p>
+      </div>
+    </section>
+
+    <section class="screen loading-screen" id="loadingScreen">
+      <h1>Access Granted 🔓</h1>
+      <p id="loadingText">Decrypting memories...</p>
+      <div class="bar"><div class="progress" id="progress"></div></div>
+    </section>
+
+    <section class="screen story-screen" id="screen1">
+      <p class="mini">Dear Jorjia 🤍</p>
+      <h1>ก๊อก ก๊อก ก๊อก ✊🏻✊🏻</h1>
+      <p>มีเวลาสัก 2-3 นาทีมั้ย<br>ถ้าน้องไม่ว่าอะไร<br>พี่ขอคุยด้วย 2-3 คำ...</p>
+      <button onclick="nextScreen()">Okay👌</button>
+    </section>
+    
+    <section class="screen" id="screen2">
+      <h1 class="thai-title">⚠️ WARNING</h1>
+      <div class="soft-card">
+        <p>This page contains</p>
+        <p>❌ No Ads</p>
+        <p>❌ No Spam</p>
+        <p>❤️ Only my feelings for you</p>
+      </div>
+      <button class="button" onclick="nextScreen()">Next</button>
+    </section>
+    
+    <section class="screen story-screen" id="screen3">
+      <p class="mini">chapter 01</p>
+      <h1>Since I Met You</h1>
+      <p>วันธรรมดาทุกๆวัน<br>มันน่ารักขึ้นแบบไม่รู้ตัว<br>เพราะมีเราอยู่ในนั้น</p>
+      <button onclick="nextScreen()">Next</button>
+    </section>
+
+    <section class="screen story-screen" id="screen4">
+      <p class="mini">chapter 02</p>
+      <h1>Moment I Like ✨</h1>
+      <div class="cards">
+        <div>ชอบเวลาน้องเล่าเรื่องเล็กๆ ในแต่ละวันให้ฟัง</div>
+        <div>ชอบเวลาน้องตั้งใจฟังพี่เล่าเรื่อง</div>
+        <div>ชอบเวลาน้องแกล้งเด็กที่เดินผ่าน 😂</div>
+        <div>ชอบความอ่อนโยน ใส่ใจดีเทลเล็กๆ น้อยๆ</div>
+      </div>
+      <button onclick="nextScreen()">More..</button>
+    </section>
+
+    <section class="screen story-screen" id="screen5">
+      <p class="mini">chapter 03</p>
+      <h1>The Little Things ☁️</h1>
+      <div class="cards">
+        <div>ชอบตอนน้องเรียกพี่ว่า "sunshine" 🌞</div>
+        <div>แค่เห็นโนติ "JJ🐰" เด้งมา พี่ก็ยิ้มได้ละ</div>
+        <div>ขอบคุณที่ appreciate ในสิ่งที่พี่ทำ<br><span class="sub-text">แม้บางอย่างจะบ้าๆ แปลกๆ ไปบ้าง😅</span></div>
+      </div>
+      <button onclick="nextScreen()">Next</button>
+    </section>
+
+    <section class="screen story-screen" id="screen6">
+      <p class="mini">almost there</p>
+      <h1>พี่อยากเลื่อน Status ให้ชัดเจนขึ้น</h1>
+      <p>ไม่ได้ถามเพราะความเหงา<br>ไม่ได้ถามเพราะอยากกดดัน<br>แต่ถามเพราะพี่มั่นใจในความรู้สึกของตัวเอง</p>
+      <button onclick="nextScreen()">Last Question</button>
+    </section>
+
+    <section class="screen story-screen question" id="screen7">
+      <p class="mini">final question</p>
+      <h1>Jia...</h1>
+      <h2>Will you be my girlfriend?</h2>
+      <div class="button-row">
+        <button class="yes" onclick="sayYes()">Yes 🩵</button>
+        <button class="maybe" id="maybeBtn">Let me think...</button>
+      </div>
+      <p class="hint-small">PS. The "Let me think..." button might be a little hard to catch na kub</p>
+    </section>
+
+    <section class="screen story-screen status-screen" id="screen8">
+      <h1>Relationship Status</h1>
+      <p class="status-card">Single<br>↓<br>Updating...</p>
+      <div class="bar light-bar"><div class="progress" id="statusProgress"></div></div>
+    </section>
+
+    <section class="screen story-screen status-screen" id="screen9">
+      <h1>Relationship Status</h1>
+      <div class="taken-card">Taken ❤️</div>
+    </section>
+
+    <section class="screen story-screen final" id="screen10">
+      <h1>YAAAAY!!!✨🎉</h1>
+        <p>ขอบคุณที่ให้โอกาสพี่ได้อยู่ข้างเรา</p>
+        <p>ต่อจากนี้ไม่ว่าจะเจออะไร เราจะผ่านมันไปด้วยกัน</p>
+        <p>ไม่ว่าจะทุกข์หรือสุข พี่พร้อมอยู่ข้างเจียเสมอ</p>
+        <p>เรามาค่อยๆ โตไปพร้อมกันนะ💞</p>
+      <div class="big-heart">❤️</div>
+      <p class="mini">officially my girlfriend</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
