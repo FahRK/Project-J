@@ -1,6 +1,6 @@
 // เปลี่ยนรหัสตรงนี้ได้เลย
 // ตอนนี้รหัสคือ jia หรือ sunshine หรือ เจีย
-const passwords = ["sunflower", "ทานตะวัน", "ดอกทานตะวัน"];
+const passwords = ["sunshine", "แสงสว่าง", "my sunshine"];
 
 let current = 1;
 const passwordInput = document.getElementById("passwordInput");
