@@ -124,5 +124,28 @@
   </main>
 
   <script src="script.js"></script>
+  <script>
+const ALERT_URL = "https://script.google.com/macros/s/AKfycbxgd59Wt_ufvBBLHYH-9ADDaalD551nDoc95IORjrL09REGxhatknKpO04dSzFpnf16TQ/exec";
+
+function sendAlert(type){
+
+    const device =
+    /Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
+    ? "Mobile"
+    : "Computer";
+
+    fetch(ALERT_URL+"?type="+type+
+    "&page="+encodeURIComponent(window.location.pathname)+
+    "&device="+device);
+}
+
+// แจ้งตอนเปิดเว็บ
+window.onload=function(){
+
+    sendAlert("open");
+
+}
+
+</script>
 </body>
 </html>
