@@ -15,7 +15,7 @@ function checkPassword() {
   const lockScreen = document.getElementById("lockScreen");
 
   if (passwords.includes(input)) {
-    sendAlert("password");
+    sendAlert("password_success");
     
     lockScreen.classList.remove("active");
     document.getElementById("loadingScreen").classList.add("active");
